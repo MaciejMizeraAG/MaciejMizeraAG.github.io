@@ -259,50 +259,8 @@
     /*end of Salesforce config*/
 
     window.addEventListener("load", function () {
-        // setTimeout(function () {
-        //     var button = document.querySelector(".helpButtonEnabled");
-        //     if (button !== null) {
-        //         button.addEventListener("click", function onclick() {
-        //             setTimeout(addFieldValidationCheck, 4000);
-        //         });
-        //     }
-        // }, 2000);
-
         setTimeout(addOfflineOnClickEvent, 3000);
     }, false);
-
-
-    // function addFieldValidationCheck() {
-    //     console.log("validation");
-    //
-    //     var required = document.querySelectorAll(".prechatUI .fieldList input[required]");
-    //     if (required) {
-    //         var allValid = [];
-    //
-    //         for (var i = 0; i < required.length; i++) {
-    //             allValid.push(false);
-    //         }
-    //         required.forEach((req, index) => {
-    //             req.addEventListener("change", function (event) {
-    //                 if (event.target.value != "") {
-    //                     allValid[index] = true;
-    //                 } else {
-    //                     allValid[index] = false;
-    //                 }
-    //
-    //                 var btn = document.querySelector(".startButton");
-    //                 if (btn) {
-    //                     if (allValid.filter(v => v == false).length == 0) {
-    //                         btn.classList.add("startButton--active");
-    //                     }
-    //                     else {
-    //                         btn.classList.remove("startButton--active");
-    //                     }
-    //                 }
-    //             }, false);
-    //         });
-    //     }
-    // }
 
     function addOfflineOnClickEvent() {
         var parentButtonElement = document.getElementById("helpButtonSpan");
@@ -323,7 +281,7 @@
 
     function redirectToContactUsForm() {
         console.log(2);
-        window.location.href = "/form/contact-us/";
+        window.location.href = "https://www.accesspaysuite.com/form/contact-us/";
     }
 
 </script>
