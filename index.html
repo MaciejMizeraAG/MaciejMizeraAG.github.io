@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 <head>
@@ -6,52 +5,10 @@
 </head>
 <body>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<div><p>Something on the page</p></div>
-
-<div><input type="button" class="button" onClick="openChat();" value="Open Chat Window" /></div>
-
 <style type='text/css'>
 
     .input-form .slds-has-error .slds-input:focus, .input-form .slds-has-error .slds-input:active {
         box-shadow: #ea001e 0 0 0 1px inset, 0 0 2px #ea001e;
-    }
-
-    /* The Modal (background) */
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    }
-
-    /* Modal Content/Box */
-    .modal-content {
-        background-color: #ffffff;
-        margin: 15% auto; /* 15% from the top and centered */
-        padding: 20px;
-        border: 1px solid #888;
-        width: 60%; /* Could be more or less, depending on screen size */
-    }
-
-    /* The Close Button */
-    .close {
-        color: #252424;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
     }
 
     /*.embeddedServiceHelpButton .helpButton .uiButton {
@@ -216,15 +173,13 @@
 
         //embedded_svc.settings.fallbackRouting = ['5738e000000wlXB','5738e000000wlXC']; //An array of button IDs, user IDs, or userId_buttonId
 
-        //embedded_svc.settings.extraPrechatFormDetails = [{"label":"Email", "transcriptFields": ["Email__c"]}, {"value":"PAY", label:"Division", "transcriptFields": ["Division__c"]}];   
-        embedded_svc.settings.extraPrechatFormDetails = [{"label":"Email", "transcriptFields": ["Email__c"]}, { "value": "PAY", "transcriptFields": ["Division__c"]}];
-
+        embedded_svc.settings.extraPrechatFormDetails = [{"label":"Email", "transcriptFields": ["Email__c"]}, { "value":window.location.href, "transcriptFields": ["Chat_Referring_URL__c"]}];
         //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
         //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
 
         // Settings for Chat
         //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-        // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+        // Dynamically changes the button ID based on what the visitor enters the pre-chat form.
         // Returns a valid button ID.
         //};
         //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
@@ -254,7 +209,7 @@
     if (!window.embedded_svc) {
         var s = document.createElement('script');
         s.setAttribute('src', 'https://accessgroup--fone.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-        s.onload = function() {
+        s.onload = function () {
             initESW(null);
         };
         document.body.appendChild(s);
@@ -263,6 +218,7 @@
     }
     /*end of Salesforce config*/
 
+    /*start of offline redirection functionality*/
     window.addEventListener("load", function () {
         setTimeout(addOfflineOnClickEvent, 3000);
     }, false);
@@ -280,7 +236,9 @@
         if (buttonTextChildNode.innerHTML === 'Contact Us') {
             console.log(1);
             buttonTopLevelParent.style.cursor = 'pointer';
-            buttonTopLevelParent.onclick = function () { redirectToContactUsForm(); };
+            buttonTopLevelParent.onclick = function () {
+                redirectToContactUsForm();
+            };
         }
     }
 
@@ -289,6 +247,7 @@
         window.location.href = "https://www.accesspaysuite.com/form/contact-us/";
     }
 
+    /*end of offline redirection functionality*/
 </script>
 </body>
 </html>
