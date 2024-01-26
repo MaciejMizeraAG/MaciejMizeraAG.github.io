@@ -200,6 +200,22 @@
         embedded_svc.settings.entryFeature = 'LiveAgent';
 
 	embedded_svc.init(
+		'https://accessgroup--fone.sandbox.my.salesforce.com',
+		'https://accessgroup--fone.sandbox.my.salesforce-sites.com/SalesChat',
+		gslbBaseURL,
+		'00D0C0000002a9I',
+		'TAG_com_Sales_Chat',
+		{
+			baseLiveAgentContentURL: 'https://c.la2s-core1.sfdc-5pakla.salesforceliveagent.com/content',
+			deploymentId: '5728e000000sZJv',
+			buttonId: '5738e0000004FdL',
+			baseLiveAgentURL: 'https://d.la2s-core1.sfdc-5pakla.salesforceliveagent.com/chat',
+			eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I3G0000004CkjUAE_188f7d19d19',
+			isOfflineSupportEnabled: false
+		}
+	);
+	/*   
+	embedded_svc.init(
 		'https://accessgroup--uat.sandbox.my.salesforce.com',
 		'https://accessgroup--uat.sandbox.my.salesforce-sites.com/SalesChat',
 		gslbBaseURL,
@@ -214,6 +230,7 @@
 			isOfflineSupportEnabled: false
 		}
 	);
+ */
     };
 
     if (!window.embedded_svc) {
