@@ -181,10 +181,10 @@
         embedded_svc.settings.defaultMinimizedText = 'Can we help?'; //(Defaults to Chat with an Expert)
         embedded_svc.settings.disabledMinimizedText = 'Contact Us'; //(Defaults to Agent Offline)     
 
-        // embedded_svc.settings.fallbackRouting = ['573Tl00000001qY','573Tl00000001qZ']; //An array of button IDs, user IDs, or userId_buttonId
+        embedded_svc.settings.fallbackRouting = ['573Q10000005ZLJ','573Q10000005ZMv']; //An array of button IDs, user IDs, or userId_buttonId
 
-        //embedded_svc.settings.extraPrechatFormDetails = [{"label":"Email", "transcriptFields": ["Email__c"]}, { "value":window.location.href, "transcriptFields": ["Chat_Referring_URL__c"]}, {"label":"What would you like to talk to us about?", "transcriptFields":["What_would_you_like_to_talk_to_us_about__c"]}];
-	embedded_svc.settings.extraPrechatFormDetails = [{ "label": "Email", "transcriptFields": ["Email__c"] }, { "label": "What software are you looking for?", "transcriptFields": ["TAG_com_Department__c"] }];
+        embedded_svc.settings.extraPrechatFormDetails = [{"label":"Email", "transcriptFields": ["Email__c"]}, { "value":window.location.href, "transcriptFields": ["Chat_Referring_URL__c"]}, {"label":"What would you like to talk to us about?", "transcriptFields":["What_would_you_like_to_talk_to_us_about__c"]}];
+	
 	//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
         //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
 
@@ -202,20 +202,20 @@
 
 
     	embedded_svc.init(
-		'https://accessgroup--mizeradev.sandbox.my.salesforce.com',
-		'https://accessgroup--mizeradev.sandbox.my.salesforce-sites.com/SalesChat',
-		gslbBaseURL,
-		'00D0C0000003Es6',
-		'TAG_com_Sales_Chat',
-		{
-			baseLiveAgentContentURL: 'https://c.la2s-core1.sfdc-5pakla.salesforceliveagent.com/content',
-			deploymentId: '572Q1000000WgP8',
-			buttonId: '573Q10000005ZI5',
-			baseLiveAgentURL: 'https://d.la2s-core1.sfdc-5pakla.salesforceliveagent.com/chat',
-			eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IQ10000002jkGMAQ_18d792e3c89',
-			isOfflineSupportEnabled: false
-		}
-	);
+			'https://accessgroup--mizeradev.sandbox.my.salesforce.com',
+			'https://accessgroup--mizeradev.sandbox.my.salesforce-sites.com/SalesChat',
+			gslbBaseURL,
+			'00D0C0000003Es6',
+			'Mintsoft_Sales_Chat',
+			{
+				baseLiveAgentContentURL: 'https://c.la2s-core1.sfdc-5pakla.salesforceliveagent.com/content',
+				deploymentId: '572Q1000000WgP8',
+				buttonId: '573Q10000005ZJh',
+				baseLiveAgentURL: 'https://d.la2s-core1.sfdc-5pakla.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IQ10000002jkFMAQ_18d792d15b9',
+				isOfflineSupportEnabled: false
+			}
+		);
 	    /*
 	embedded_svc.init(
 		'https://accessgroup--fone.sandbox.my.salesforce.com',
